@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace CeoMasterDetail
+namespace CeoMasterDetail.Views.DetailViews
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Primera : ContentPage
+	public partial class Segunda : ContentPage
 	{
-		public Primera ()
+		public Segunda ()
 		{
 			InitializeComponent ();
 		}

@@ -7,13 +7,13 @@ namespace CeoWebServices.Models
     {
         public Proyectos()
         {
-            Actas = new HashSet<Actas>();
-            AreaProyecto = new HashSet<AreaProyecto>();
-            Consorcio = new HashSet<Consorcio>();
-            Facturas = new HashSet<Facturas>();
-            Polizas = new HashSet<Polizas>();
-            Rup = new HashSet<Rup>();
-            VehDesplazamiento = new HashSet<VehDesplazamiento>();
+            //Actas = new HashSet<Actas>();
+            //AreaProyecto = new HashSet<AreaProyecto>();
+            //Consorcio = new HashSet<Consorcio>();
+            //Facturas = new HashSet<Facturas>();
+            //Polizas = new HashSet<Polizas>();
+            //Rup = new HashSet<Rup>();
+            //VehDesplazamiento = new HashSet<VehDesplazamiento>();
         }
 
         public decimal PryIdProyecto { get; set; }
@@ -56,16 +56,16 @@ namespace CeoWebServices.Models
         public decimal? PryCodRup { get; set; }
         public string PryActCon { get; set; }
 
-        public Ciudades Pry { get; set; }
-        public CategoriaContratos PryIdCategoriaContratoNavigation { get; set; }
-        public Empresas PryIdEmpresaNavigation { get; set; }
-        public SubcategoriaContratos PryIdSubcategoriaContratoNavigation { get; set; }
-        public ICollection<Actas> Actas { get; set; }
-        public ICollection<AreaProyecto> AreaProyecto { get; set; }
-        public ICollection<Consorcio> Consorcio { get; set; }
-        public ICollection<Facturas> Facturas { get; set; }
-        public ICollection<Polizas> Polizas { get; set; }
-        public ICollection<Rup> Rup { get; set; }
-        public ICollection<VehDesplazamiento> VehDesplazamiento { get; set; }
+        //public Ciudades Pry { get; set; }
+        //public CategoriaContratos PryIdCategoriaContratoNavigation { get; set; }
+        //public Empresas PryIdEmpresaNavigation { get; set; }
+        //public SubcategoriaContratos PryIdSubcategoriaContratoNavigation { get; set; }
+        //public ICollection<Actas> Actas { get; set; }
+        //public ICollection<AreaProyecto> AreaProyecto { get; set; }
+        //public ICollection<Consorcio> Consorcio { get; set; }
+        //public ICollection<Facturas> Facturas { get; set; }
+        //public ICollection<Polizas> Polizas { get; set; }
+        //public ICollection<Rup> Rup { get; set; }
+        //public ICollection<VehDesplazamiento> VehDesplazamiento { get; set; }    
     }
 }

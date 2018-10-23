@@ -1,4 +1,5 @@
 ﻿using System;
+using CeoMasterDetail.Views.Menu;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -7,7 +8,7 @@ namespace CeoMasterDetail
 {
     public partial class App : Application
     {
-        public static MasterDetailPage MasterD { get; set; }
+        //public static MasterDetailPage MasterD { get; set; }
 
         public App()
         {
