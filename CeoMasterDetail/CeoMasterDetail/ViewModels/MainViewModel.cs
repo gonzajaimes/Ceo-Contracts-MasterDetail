@@ -1,5 +1,5 @@
 ﻿using CeoMasterDetail.Services;
-using CeoWebServices.Models;
+using CeoMasterDetail.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,56 +12,65 @@ namespace CeoMasterDetail.ViewModels
 {
     public class MainViewModel : INotifyPropertyChanged
     {
-        private List<Proyectos> _proyectosList;
-        private Proyectos _selectedProyecto = new Proyectos();
-        private List<Proyectos> _searchedProyectos;
-        private string _searchKeyWord;
+        private List<MenuEmpresa> _menuEmpresasList;
+        private MenuEmpresa _selectedMenuEmpresa = new MenuEmpresa();
+        //private List<Proyectos> _searchedProyectos;
+        //private string _searchKeyWord;
         private bool _isBusy = false;
         private string _statusMessage;
         private bool _requestSucceed;
 
-        public string SearchKeyWord
+        //public string SearchKeyWord
+        //{
+        //    get
+        //    {
+        //        return _searchKeyWord;
+        //    }
+        //    set
+        //    {
+        //        _searchKeyWord = value;
+        //        OnPropertyChanged();
+        //    }
+        //}
+
+        public List<MenuEmpresa> MenuEmpresasList
         {
-            get
-            {
-                return _searchKeyWord;
-            }
+            get { return _menuEmpresasList; }
             set
             {
-                _searchKeyWord = value;
+                _menuEmpresasList = value;
+                OnPropertyChanged();
+            }
+        }
+        public MenuEmpresa SelectedMenuEmpresa
+        {
+            get { return _selectedMenuEmpresa; }
+            set
+            {
+                _selectedMenuEmpresa = value;
                 OnPropertyChanged();
             }
         }
 
-        public List<Proyectos> ProyectosList
-        {
-            get { return _proyectosList; }
-            set
-            {
-                _proyectosList = value;
-                OnPropertyChanged();
-            }
-        }
+        //public List<Proyectos> SearchedEmployees
+        //{
+        //    get { return _searchedProyectos; }
+        //    set
+        //    {
+        //        _searchedProyectos = value;
+        //        OnPropertyChanged();
+        //    }
+        //}
 
-        public List<Proyectos> SearchedEmployees
-        {
-            get { return _searchedProyectos; }
-            set
-            {
-                _searchedProyectos = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public Proyectos SelectedProyecto
-        {
-            get { return _selectedProyecto; }
-            set
-            {
-                _selectedProyecto = value;
-                OnPropertyChanged();
-            }
-        }
+        //public Proyectos SelectedProyecto
+        //{
+        //    get { return _selectedProyecto; }
+        //    set
+        //    {
+        //        _selectedProyecto = value;
+        //        OnPropertyChanged();
+        //    }
+        //}
 
         public bool RequestSucceed
         {
@@ -211,7 +220,7 @@ namespace CeoMasterDetail.ViewModels
             IsBusy = true;
 
             var proyectosServices = new ProyectosServices();
-            ProyectosList = await proyectosServices.GetProyectosAsync();
+            MenuEmpresasList = await proyectosServices.GetMenuItemsAsync();
 
             IsBusy = false;
         }

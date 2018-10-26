@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CeoMasterDetail.Models;
+using CeoMasterDetail.ViewModels;
 using CeoMasterDetail.Views.DetailViews;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -15,29 +16,30 @@ namespace CeoMasterDetail.Views.Menu
 	{
 		public ListView ListView
         {
-            get 
+            get
             {
-                return listview;
+                return ClientesListView;
             }
-            
+
         }
 
-        public List<MasterMenuItem> items;
+        //      public List<MasterMenuItem> items;
 
         public Master ()
 		{
 			InitializeComponent ();
-            SetItems();
+           // SetItems();
 		}
+       
 
-        void SetItems ()
-        {
-            items = new List<MasterMenuItem>
-            {
-                new MasterMenuItem("Primera", "icon.png", Color.White, typeof(Primera)),
-                new MasterMenuItem("Segunda", "icon.png", Color.White, typeof(Segunda))
-            };
-            ListView.ItemsSource = items;
-        }
-	}
+        //void SetItems ()
+        //{
+        //    items = new List<MasterMenuItem>
+        //    {
+        //        new MasterMenuItem("Primera", "icon.png", Color.White, typeof(Primera)),
+        //        new MasterMenuItem("Segunda", "icon.png", Color.White, typeof(Segunda))
+        //    };
+        //    ListView.ItemsSource = items;
+        //}
+    }
 }

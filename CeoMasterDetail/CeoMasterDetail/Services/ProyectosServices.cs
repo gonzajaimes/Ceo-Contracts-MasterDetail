@@ -1,5 +1,5 @@
 ﻿using CeoMasterDetail.RestClient;
-using CeoWebServices.Models;
+using CeoMasterDetail.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,12 +9,13 @@ namespace CeoMasterDetail.Services
 {
     public class ProyectosServices
     {
-        public async Task<List<Proyectos>> GetProyectosAsync()
+        public async Task<List<MenuEmpresa>> GetMenuItemsAsync()
         {
-            RestClient<Proyectos> restClient = new RestClient<Proyectos>();
+            RestClient<MenuEmpresa> restClient = new RestClient<MenuEmpresa>();
 
-            var ProyectosList = await restClient.GetAsync();
-            return ProyectosList;
+            var MenuEmpresasList = await restClient.GetMenuItemsAsync();
+
+            return MenuEmpresasList;
         }
 
         //public async Task<bool> PostEmployeeAsync(Employee employee)

@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ViewModels="clr-namespace:CeoMasterDetail.ViewModels"
              x:Class="CeoMasterDetail.Views.Menu.Master"
              Title="Clientes">
+    <ContentPage.BindingContext>
+        <ViewModels:MainViewModel/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout x:Name="MasterStack" VerticalOptions="FillAndExpand">
             
@@ -10,7 +14,27 @@
                 <Label Text="Clientes" HorizontalOptions="Center" FontSize="Large"/>
             </StackLayout>
             <StackLayout x:Name="MiddleStack">
-                <ListView x:Name="listview" >
+                <ListView x:Name="ClientesListView"
+                  ItemsSource="{Binding MenuEmpresasList}" 
+                  HasUnevenRows="True">
+
+                    <!--ItemTemplate="{StaticResource CustomDataTemplateSelector}">-->
+                    <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical" 
+                                 Padding="12,6">
+                            <Label Text="{Binding RazonSocial}"
+                               FontSize="24"/>
+                            <Label Text="{Binding  NumeroContratos}"
+                               FontSize="18"
+                               Opacity="0.6"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+                </ListView>
+                <!--<ListView x:Name="listview" >
                    <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -22,7 +46,7 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                     
-                </ListView>
+                </ListView>-->
             </StackLayout>
             <StackLayout x:Name="BottomStack" VerticalOptions="EndAndExpand">
                 <Button Text="Logout"/>

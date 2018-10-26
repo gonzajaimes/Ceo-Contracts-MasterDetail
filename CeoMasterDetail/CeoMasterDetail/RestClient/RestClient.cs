@@ -27,6 +27,16 @@ namespace CeoMasterDetail.RestClient
 
             return proyectos;
         }
+        public async Task<List<T>> GetMenuItemsAsync()
+        {
+            var httpClient = new HttpClient();
+
+            var json = await httpClient.GetStringAsync(WebServiceUrl + "clientes");
+
+            var menuItems = JsonConvert.DeserializeObject<List<T>>(json);
+
+            return menuItems;
+        }
 
         public async Task<bool> PostAsync(T t)
         {
