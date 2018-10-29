@@ -3,9 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:CeoMasterDetail.Views.Menu"
              xmlns:detailviews="clr-namespace:CeoMasterDetail.Views.DetailViews"
+             xmlns:ViewModels="clr-namespace:CeoMasterDetail.ViewModels"
              xmlns:masterviews="clr-namespace:CeoMasterDetail.Views.Menu"     
              x:Class="CeoMasterDetail.Views.Menu.MainPage">
     
+    <MasterDetailPage.BindingContext>
+        <ViewModels:MainViewModel/>
+    </MasterDetailPage.BindingContext>
+
     <MasterDetailPage.Master>
         <local:Master x:Name="masterpage"/>
     </MasterDetailPage.Master>
@@ -13,7 +18,8 @@
     <MasterDetailPage.Detail>
         <NavigationPage>
             <x:Arguments>
-                <detailviews:Primera/>
+                
+                <detailviews:EntryDetail x:Name="detailPage"/>
               
             </x:Arguments>    
           

@@ -15,7 +15,7 @@ namespace CeoMasterDetail.RestClient
 
     public class RestClient<T>
     {
-        private const string WebServiceUrl = "http://gonzajaimesemployeesapp.azurewebsites.net/api/Employees/";
+        private const string WebServiceUrl = "http://192.168.0.43:5000/api/Proyectos/";
 
         public async Task<List<T>> GetAsync()
         {
@@ -77,11 +77,11 @@ namespace CeoMasterDetail.RestClient
             return response.IsSuccessStatusCode;
         }
 
-        public async Task<List<T>> GetByKeywordAsync(string keyword)
+        public async Task<List<T>> GetByKeywordAsync(decimal keyword)
         {
             var httpClient = new HttpClient();
 
-            var json = await httpClient.GetStringAsync(WebServiceUrl + "search/" + keyword);
+            var json = await httpClient.GetStringAsync(WebServiceUrl + "searchId/" + keyword);
 
             var employees = JsonConvert.DeserializeObject<List<T>>(json);
 

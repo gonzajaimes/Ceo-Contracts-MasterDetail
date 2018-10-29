@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace CeoMasterDetail.Views.DetailViews
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Primera : ContentPage
+	public partial class EntryDetail : ContentPage
 	{
-		public Primera ()
+		public EntryDetail ()
 		{
 			InitializeComponent ();
 		}

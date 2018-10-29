@@ -14,7 +14,7 @@ namespace CeoMasterDetail.ViewModels
     {
         private List<MenuEmpresa> _menuEmpresasList;
         private MenuEmpresa _selectedMenuEmpresa = new MenuEmpresa();
-        //private List<Proyectos> _searchedProyectos;
+        private List<Proyectos> _searchedProjects;
         //private string _searchKeyWord;
         private bool _isBusy = false;
         private string _statusMessage;
@@ -52,25 +52,17 @@ namespace CeoMasterDetail.ViewModels
             }
         }
 
-        //public List<Proyectos> SearchedEmployees
-        //{
-        //    get { return _searchedProyectos; }
-        //    set
-        //    {
-        //        _searchedProyectos = value;
-        //        OnPropertyChanged();
-        //    }
-        //}
+        public List<Proyectos> SearchedProjects
+        {
+            get { return _searchedProjects; }
+            set
+            {
+                _searchedProjects = value;
+                OnPropertyChanged();
+            }
+        }
 
-        //public Proyectos SelectedProyecto
-        //{
-        //    get { return _selectedProyecto; }
-        //    set
-        //    {
-        //        _selectedProyecto = value;
-        //        OnPropertyChanged();
-        //    }
-        //}
+
 
         public bool RequestSucceed
         {
@@ -193,21 +185,22 @@ namespace CeoMasterDetail.ViewModels
         //    }
         //}
 
-        //public Command SearchCommand
-        //{
-        //    get
-        //    {
-        //        return new Command(async () =>
-        //        {
-        //            IsBusy = true;
+        public Command SearchProjectsCommand
+        {
+            get
+            {
+                return new Command(async () =>
+                {
+                    IsBusy = true;
 
-        //            var employeesServices = new EmployeesServices();
-        //            SearchedEmployees = await employeesServices.GetEmployeesByKeywordAsync(_searchKeyWord);
+                    
+                    var proyectosServices = new ProyectosServices();
+                    SearchedProjects = await proyectosServices.GetProjectsByIdAsync(SelectedMenuEmpresa.IdEmpresa);
 
-        //            IsBusy = false;
-        //        });
-        //    }
-        //}
+                    IsBusy = false;
+                });
+            }
+        }
 
 
         public MainViewModel()

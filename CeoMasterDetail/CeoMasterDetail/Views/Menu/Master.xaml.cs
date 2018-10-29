@@ -23,23 +23,12 @@ namespace CeoMasterDetail.Views.Menu
 
         }
 
-        //      public List<MasterMenuItem> items;
-
-        public Master ()
+      public Master ()
 		{
 			InitializeComponent ();
-           // SetItems();
+           
 		}
        
-
-        //void SetItems ()
-        //{
-        //    items = new List<MasterMenuItem>
-        //    {
-        //        new MasterMenuItem("Primera", "icon.png", Color.White, typeof(Primera)),
-        //        new MasterMenuItem("Segunda", "icon.png", Color.White, typeof(Segunda))
-        //    };
-        //    ListView.ItemsSource = items;
-        //}
+               
     }
 }

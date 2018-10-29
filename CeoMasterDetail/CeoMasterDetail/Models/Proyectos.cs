@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CeoWebServices.Models
+namespace CeoMasterDetail.Models
 {
     public partial class Proyectos
     {

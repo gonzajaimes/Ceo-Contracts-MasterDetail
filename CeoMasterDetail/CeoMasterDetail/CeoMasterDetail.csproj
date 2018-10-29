@@ -18,10 +18,14 @@
     <EmbeddedResource Update="Detail.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\DetailViews\EntryDetail.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\DetailViews\ProjectsFromClient.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\" />
     <Folder Include="Views\Menu\" />
-    <Folder Include="Views\DetailViews\" />
   </ItemGroup>
 </Project>

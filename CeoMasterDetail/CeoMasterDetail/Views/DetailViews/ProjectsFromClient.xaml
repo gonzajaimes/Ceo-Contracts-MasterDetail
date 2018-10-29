@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CeoMasterDetail.Views.DetailViews.ProjectsFromClient"
+             xmlns:ViewModels="clr-namespace:CeoMasterDetail.ViewModels">
+    <ContentPage.BindingContext>
+        <ViewModels:MainViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <ListView x:Name="ProjectsListView"
+                   ItemsSource="{Binding SearchedProjects}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <Grid Padding="5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="60"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="2*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                                    <ColumnDefinition Width="3*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Row="0" Grid.Column="0" Text ="{Binding PryNombreDelProyecto}" HorizontalOptions="Center" Grid.ColumnSpan="3"/>
+                                <Label Grid.Row="1" Grid.Column="0" Text="Fecha Inicio: " XAlign="Center" YAlign="Center" TextColor="Black" FontAttributes="Bold"/>
+                                <Label Grid.Row="1" Grid.Column="1" Text="atributo 2:" XAlign="Center" YAlign="Center" TextColor="Black"/>
+                                <Label Grid.Row="1" Grid.Column="2" Text="atributo 3: " XAlign="Center" YAlign="Center" TextColor="Black" FontAttributes="Bold"/>
+                                <Label Grid.Row="2" Grid.Column="0" Text="{Binding PryFechaInicio}" XAlign="Center" YAlign="Center" TextColor="Black"/>
+                                <BoxView Color="Navy" HeightRequest="2" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"/>
+                            </Grid>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>
