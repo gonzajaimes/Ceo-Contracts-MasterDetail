@@ -20,6 +20,9 @@ namespace CeoMasterDetail.ViewModels
         private string _statusMessage;
         private bool _requestSucceed;
 
+        public string SelectedCompany { get; set; }
+
+
         //public string SearchKeyWord
         //{
         //    get
@@ -191,13 +194,13 @@ namespace CeoMasterDetail.ViewModels
             {
                 return new Command(async () =>
                 {
-                    IsBusy = true;
+                    //  IsBusy = true;
 
-                    
+                    var Empresa = (int)SelectedMenuEmpresa.IdEmpresa;
                     var proyectosServices = new ProyectosServices();
-                    SearchedProjects = await proyectosServices.GetProjectsByIdAsync(SelectedMenuEmpresa.IdEmpresa);
+                    SearchedProjects = await proyectosServices.GetProjectsByIdAsync(Empresa);
 
-                    IsBusy = false;
+                 //   IsBusy = false;
                 });
             }
         }

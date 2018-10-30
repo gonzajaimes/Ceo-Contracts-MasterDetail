@@ -47,11 +47,11 @@ namespace CeoMasterDetail.Services
         //    return isSuccessStatusCode;
         //}
 
-        public async Task<List<Proyectos>> GetProjectsByIdAsync(decimal keyword)
+        public async Task<List<Proyectos>> GetProjectsByIdAsync(int clientId)
         {
             RestClient<Proyectos> restClient = new RestClient<Proyectos>();
              
-            var projectsList = await restClient.GetByKeywordAsync(keyword);
+            var projectsList = await restClient.GetByKeywordAsync(clientId);
             return projectsList;
         }
 

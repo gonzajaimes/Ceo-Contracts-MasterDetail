@@ -30,6 +30,7 @@ namespace CeoMasterDetail.Views.Menu
                 var mainViewModel = BindingContext as MainViewModel;
 
                 mainViewModel.SelectedMenuEmpresa = cliente;
+                mainViewModel.SelectedCompany = cliente.RazonSocial;
                 mainViewModel.SearchProjectsCommand.Execute(null);  
                 Detail = new NavigationPage(new ProjectsFromClient(mainViewModel));
                 masterpage.ListView.SelectedItem = null;

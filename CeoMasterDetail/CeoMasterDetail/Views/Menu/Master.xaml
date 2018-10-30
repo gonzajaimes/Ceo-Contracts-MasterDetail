@@ -25,9 +25,9 @@
                         <StackLayout Orientation="Vertical" 
                                  Padding="12,6">
                             <Label Text="{Binding RazonSocial}"
-                               FontSize="24"/>
-                            <Label Text="{Binding  NumeroContratos}"
-                               FontSize="18"
+                               FontSize="Medium"/>
+                            <Label Text="{Binding NumeroContratos}"
+                               FontSize="Small"
                                Opacity="0.6"/>
                         </StackLayout>
                     </ViewCell>

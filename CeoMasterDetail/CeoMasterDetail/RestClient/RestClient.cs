@@ -77,15 +77,17 @@ namespace CeoMasterDetail.RestClient
             return response.IsSuccessStatusCode;
         }
 
-        public async Task<List<T>> GetByKeywordAsync(decimal keyword)
+        public async Task<List<T>> GetByKeywordAsync(int clientId)
         {
             var httpClient = new HttpClient();
 
-            var json = await httpClient.GetStringAsync(WebServiceUrl + "searchId/" + keyword);
+            //var queryString = WebServiceUrl + "searchId/" + clientId;
 
-            var employees = JsonConvert.DeserializeObject<List<T>>(json);
+           var json = await httpClient.GetStringAsync(WebServiceUrl + "searchId/" + clientId );
 
-            return employees;
+            var proyectos = JsonConvert.DeserializeObject<List<T>>(json);
+
+            return proyectos;
         }
 
     }

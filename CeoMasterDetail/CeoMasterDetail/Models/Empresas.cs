@@ -20,7 +20,7 @@ namespace CeoWebServices.Models
         //
         }
 
-        public decimal EmpIdEmpresa { get; set; }
+        public int EmpIdEmpresa { get; set; }
         public decimal EmpIdCategoriaEmpresa { get; set; }
         public string EmpRazonSocial { get; set; }
         public string EmpSitioWeb { get; set; }

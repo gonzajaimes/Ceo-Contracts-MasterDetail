@@ -2,38 +2,53 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CeoMasterDetail.Views.DetailViews.ProjectsFromClient"
-             xmlns:ViewModels="clr-namespace:CeoMasterDetail.ViewModels">
+             xmlns:ViewModels="clr-namespace:CeoMasterDetail.ViewModels"
+             Title="{Binding SelectedCompany}" >
     <ContentPage.BindingContext>
         <ViewModels:MainViewModel/>
     </ContentPage.BindingContext>
     
     <ContentPage.Content>
         <ListView x:Name="ProjectsListView"
+                  HasUnevenRows="True"
                    ItemsSource="{Binding SearchedProjects}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
+                    <ViewCell >
                         <ViewCell.View>
-                            <Grid Padding="5">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="60"></RowDefinition>
-                                    <RowDefinition Height="*"></RowDefinition>
-                                    <RowDefinition Height="2*"></RowDefinition>
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="1*"></ColumnDefinition>
-                                    <ColumnDefinition Width="2*"></ColumnDefinition>
-                                    <ColumnDefinition Width="3*"></ColumnDefinition>
-                                </Grid.ColumnDefinitions>
+                            <StackLayout x:Name="TopStack" Padding="12,6">
+                                <Label Text="{Binding PryNombreDelProyecto}" HorizontalOptions="Center" FontSize="Small"/>
+                                <Grid Padding="5" BackgroundColor="Gray" ColumnSpacing="1" RowSpacing="1" >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="1*"></RowDefinition>
+                                        <RowDefinition Height="1*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                                        <!--<ColumnDefinition Width="1*"></ColumnDefinition>
+                                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                                        <ColumnDefinition Width="1*"></ColumnDefinition>-->
+                                    </Grid.ColumnDefinitions>
 
-                                <Label Grid.Row="0" Grid.Column="0" Text ="{Binding PryNombreDelProyecto}" HorizontalOptions="Center" Grid.ColumnSpan="3"/>
-                                <Label Grid.Row="1" Grid.Column="0" Text="Fecha Inicio: " XAlign="Center" YAlign="Center" TextColor="Black" FontAttributes="Bold"/>
-                                <Label Grid.Row="1" Grid.Column="1" Text="atributo 2:" XAlign="Center" YAlign="Center" TextColor="Black"/>
-                                <Label Grid.Row="1" Grid.Column="2" Text="atributo 3: " XAlign="Center" YAlign="Center" TextColor="Black" FontAttributes="Bold"/>
-                                <Label Grid.Row="2" Grid.Column="0" Text="{Binding PryFechaInicio}" XAlign="Center" YAlign="Center" TextColor="Black"/>
-                                <BoxView Color="Navy" HeightRequest="2" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"/>
-                            </Grid>
-                        </ViewCell.View>
+                                    <Label Grid.Row="0" Grid.Column="0" Text="Fecha_Cont" TextColor="Black" BackgroundColor="White"/>
+                                    <Label Grid.Row="0" Grid.Column="1" Text="Fecha Ini"  TextColor="Black" BackgroundColor="White"/>
+                                    <Label Grid.Row="0" Grid.Column="2" Text="Fecha Fin" TextColor="Black"  BackgroundColor="White"/>
+                                    <!--<Label Grid.Row="0" Grid.Column="3" Text="Valor Ini" TextColor="Black"  BackgroundColor="White"/>
+                                    <Label Grid.Row="0" Grid.Column="4" Text="Valor Fin" TextColor="Black"  BackgroundColor="White"/>
+                                    <Label Grid.Row="0" Grid.Column="5" Text="Valor Ejec" TextColor="Black" BackgroundColor="White"/>-->
+                                    <Label Grid.Row="1" Grid.Column="0" Text="{Binding PryFechaContrato, StringFormat='\{0:dd-MMM-yy}'}"  TextColor="Black" BackgroundColor="White"/>
+                                    <Label Grid.Row="1" Grid.Column="1" Text="{Binding PryFechaInicio, StringFormat='\{0:dd-MMM-yy}'}"  TextColor="Black" BackgroundColor="White"/>
+                                    <Label Grid.Row="1" Grid.Column="2" Text="{Binding  PryFechaTerminacion, StringFormat='\{0:dd-MMM-yy}'}"  TextColor="Black" BackgroundColor="White"/>
+                                    <!--<Label Grid.Row="1" Grid.Column="3" Text="{Binding PryValorInicial}"  TextColor="Black" BackgroundColor="White" />
+                                    <Label Grid.Row="1" Grid.Column="4" Text="{Binding  PryValorFinal}"  TextColor="Black"  BackgroundColor="White" />
+                                    <Label Grid.Row="1" Grid.Column="5" Text="{Binding  PryValorFinalConIva}"  TextColor="Black" BackgroundColor="White" />-->
+
+                                </Grid>
+                            </StackLayout>
+                            
+                         </ViewCell.View>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
